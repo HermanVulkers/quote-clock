@@ -1,0 +1,104 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("assets/desktop/bg-image-daytime.jpg");
+	background-position: center center;
+	background-attachment: fixed;
+	background-repeat: no-repeat; background-size: cover;
+	color: white;
+	font-family: 'Inter', sans-serif;
+	height: 100vh;
+	display: flex;
+	
+}
+
+#container-main {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	margin: auto;
+	height: 80%;
+}
+
+#container-main-left {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 50%;
+}
+
+#quote-block {
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+#quote-refresh {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+#refresh {
+	background: none;
+	border: none;
+}
+
+#author {
+	margin-top: 10px;
+}
+
+
+#time-block {
+	display: flex;
+	flex-direction: column;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+#good-morning {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#good-morning img {
+	margin-right: 8px;
+
+}
+
+#good-morning, #location {
+	font-size: 18px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	font-weight: 300;
+
+}
+
+
+#time-total {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+
+}
+
+#clock {
+	font-size: 160px;
+	font-weight: bold;
+	letter-spacing: -5;
+	font-weight: 500;
+}
+
+#timezone {
+font-size: 30px;
+
+}
+
+
+
