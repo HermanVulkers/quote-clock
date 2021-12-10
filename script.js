@@ -4,7 +4,6 @@ fetch(
 )
 	.then((res) => res.json())
 	.then((response) => {
-		console.log(response);
 		let country = response.country_name;
 		let city = response.city;
 
@@ -56,7 +55,6 @@ let localTimeRaw = new Date();
 
 // Get clean local time
 let localTime = localTimeRaw.toTimeString().slice(0, 5);
-console.log(localTime);
 // Clean local time insertion to DOM
 document.getElementById("clock").innerHTML = `${localTime}`;
 // Clock refresh every 10 seconds
@@ -79,7 +77,6 @@ $(document).ready(function () {
 
 // Welcome message insertion to DOM
 let localTimeFirstTwoChars = localTime.slice(0, 2);
-console.log(localTimeFirstTwoChars);
 if (
 	localTimeFirstTwoChars === "05" ||
 	localTimeFirstTwoChars === "06" ||
