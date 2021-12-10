@@ -2,7 +2,6 @@
 fetch("http://ip-api.com/json")
 	.then((res) => res.json())
 	.then((response) => {
-		console.log(response);
 		let country = response.country;
 		let city = response.city;
 
@@ -10,6 +9,41 @@ fetch("http://ip-api.com/json")
 		document.getElementById(
 			"location"
 		).innerHTML = `in ${city}, ${country}`;
+	})
+	.catch((data, status) => {
+		console.log("Request failed");
+	});
+
+fetch("http://worldtimeapi.org/api/ip")
+	.then((res) => res.json())
+	.then((response) => {
+		console.log(response);
+		let timezone = response.timezone;
+		let dayOfWeek = response.day_of_week;
+		let dayOfYear = response.day_of_year;
+		let weekNumber = response.week_number;
+		let timezoneAbbreviated = response.abbreviation;
+
+		// Stat & timezone insertion to DOM
+		document.getElementById(
+			"timezone-slider-content"
+		).innerHTML = `${timezone}`;
+
+		document.getElementById(
+			"dayofweek-slider-content"
+		).innerHTML = `${dayOfWeek}`;
+
+		document.getElementById(
+			"dayofyear-slider-content"
+		).innerHTML = `${dayOfYear}`;
+
+		document.getElementById(
+			"weeknumber-slider-content"
+		).innerHTML = `${weekNumber}`;
+
+		document.getElementById(
+			"timezone"
+		).innerHTML = `${timezoneAbbreviated}`;
 	})
 	.catch((data, status) => {
 		console.log("Request failed");
@@ -41,11 +75,6 @@ $(document).ready(function () {
 	}, 1000); // 10 seconds
 });
 
-// Get timezone
-let timezone = localTimeRaw.toTimeString().slice(9, 12);
-// Timezone insertion to DOM
-document.getElementById("timezone").innerHTML = `${timezone}`;
-
 // Welcome message insertion to DOM
 let localTimeFirstTwoChars = localTime.slice(0, 2);
 console.log(localTimeFirstTwoChars);
@@ -58,25 +87,22 @@ if (
 	"10" ||
 	"11"
 ) {
-	document.getElementById(
-		"welcome-message-text"
-	).innerHTML = `Good morning, it's`;
+	document.getElementById("welcome-message-text").innerHTML = `Good morning`;
 } else if (
 	localTimeFirstTwoChars === "12" ||
 	"13" ||
 	"14" ||
 	"15" ||
 	"16" ||
-	"17" ||
-	"18"
+	"17"
 ) {
 	document.getElementById(
 		"welcome-message-text"
-	).innerHTML = `Good afternoon, it's`;
+	).innerHTML = `Good afternoon`;
 } else {
-	document.getElementById(
-		"welcome-message-text"
-	).innerHTML = `Good evening, it's`;
+	document.getElementById("welcome-message-text").innerHTML = `Good evening`;
+	document.body.style.backgroundImage =
+		"url('assets/desktop/bg-image-nighttime.jpg')";
 }
 
 function fetchQuote() {
@@ -86,9 +112,34 @@ function fetchQuote() {
 			let quote = data.en;
 			let author = data.author;
 
-			document.getElementById("quote").innerHTML = `${quote}`;
+			document.getElementById("quote").innerHTML = `"${quote}"`;
 			document.getElementById("author").innerHTML = `${author}`;
 		});
 }
 
 fetchQuote();
+
+// // Slider
+// var toggle = document.getElementById("toggle");
+// var slider = document.querySelector(".slider");
+
+// toggle.addEventListener("click", toggleSlider, false);
+
+// function toggleSlider() {
+// 	if (slider.classList.contains("opened")) {
+// 		slider.classList.remove("opened");
+// 		slider.classList.add("closed");
+// 	} else {
+// 		slider.classList.remove("closed");
+// 		slider.classList.add("opened");
+// 	}
+// }
+
+$("#toggle, .slider").click(function () {
+	$(".slider").toggleClass("close");
+	$("#container-main").toggleClass("slide-up");
+});
+
+$("#toggle").click(function () {
+	$(".arrow").toggleClass("rotate");
+});

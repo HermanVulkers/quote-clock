@@ -22,14 +22,14 @@
 					<div id="quote">
 						"Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, id laborum aspernatur, numquam eius sit voluptates ipsa, ipsam necessitatibus aliquid est impedit consequatur adipisci? Quod blanditiis totam molestiae magnam quis?"
 					</div>
-				<button id="refresh" onclick="fetchQuote()"><img src="assets/desktop/icon-refresh.svg"></button>
+				<button id="refresh" onclick="fetchQuote()"><img id="refresh-icon" src="assets/desktop/icon-refresh.svg"></button>
 				</div>
 				<div id="author">Herman Vulkers</div>
 			</div>
 			<div id="time-block">
 				<div id="welcome-message">
 					<img id="welcome-message-icon" src="assets/desktop/icon-sun.svg">
-					<span id="welcome-message-text">Good morning, it's</span>
+					<span id="welcome-message-text">Good morning</span>
 				</div>
 				<div id="time-total">
 					<div id="clock">
@@ -46,16 +46,38 @@
 		</div>
 
 		<div id="container-main-right">
-			<button id="more">
+			<button id="toggle">
 				<span id="more-text">More</span>
-				<div id="circle"></div>
+				<div id="circle" class="arrow">	
+				</div>
 			</button>
 		</div>
-		
+	
+	</div>
 
+	
 
+	<div class="slider close">
+		<div id="slider-container">
+			<div id="timezone-slider">
+				<div id="timezone-slider-title">Current timezone</div>
+				<div id="timezone-slider-content">Europe/London</div>
+			</div>
+			<div id="dayofweek-slider">
+				<div id="dayofweek-slider-title">Day of the week</div>
+				<div id="dayofweek-slider-content">5</div>
+			</div>
+			<div id="dayofyear-slider">
+				<div id="dayofyear-slider-title">Day of the year</div>
+				<div id="dayofyear-slider-content">295</div>
+			</div>
+			<div id="weeknumber-slider">
+				<div id="weeknumber-slider-title">Weeknumber</div>
+				<div id="weeknumber-slider-content">42</div>
+			</div>
+		</div>
+	</div>
 
-	</container-main>
 
   <script src="script.js"></script>
 </body>
