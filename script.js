@@ -1,8 +1,11 @@
 // Location / IP API
-fetch("http://ip-api.com/json")
+fetch(
+	"https://api.freegeoip.app/json/?apikey=36e3c620-59c1-11ec-8ef1-c9a59438c8ad"
+)
 	.then((res) => res.json())
 	.then((response) => {
-		let country = response.country;
+		console.log(response);
+		let country = response.country_name;
 		let city = response.city;
 
 		// Location insertion to DOM
@@ -14,7 +17,7 @@ fetch("http://ip-api.com/json")
 		console.log("Request failed");
 	});
 
-fetch("http://worldtimeapi.org/api/ip")
+fetch("https://worldtimeapi.org/api/ip/")
 	.then((res) => res.json())
 	.then((response) => {
 		let timezone = response.timezone;

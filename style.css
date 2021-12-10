@@ -300,3 +300,8 @@ body {
 	font-size: 11px;
 	letter-spacing: 2px;
 }
+
+#toggle:hover {
+	background-color: lightsteelblue;
+	cursor: pointer;
+}
