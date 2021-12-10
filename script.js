@@ -17,7 +17,6 @@ fetch("http://ip-api.com/json")
 fetch("http://worldtimeapi.org/api/ip")
 	.then((res) => res.json())
 	.then((response) => {
-		console.log(response);
 		let timezone = response.timezone;
 		let dayOfWeek = response.day_of_week;
 		let dayOfYear = response.day_of_year;
@@ -80,21 +79,21 @@ let localTimeFirstTwoChars = localTime.slice(0, 2);
 console.log(localTimeFirstTwoChars);
 if (
 	localTimeFirstTwoChars === "05" ||
-	"06" ||
-	"07" ||
-	"08" ||
-	"09" ||
-	"10" ||
-	"11"
+	localTimeFirstTwoChars === "06" ||
+	localTimeFirstTwoChars === "07" ||
+	localTimeFirstTwoChars === "08" ||
+	localTimeFirstTwoChars === "09" ||
+	localTimeFirstTwoChars === "10" ||
+	localTimeFirstTwoChars === "11"
 ) {
 	document.getElementById("welcome-message-text").innerHTML = `Good morning`;
 } else if (
 	localTimeFirstTwoChars === "12" ||
-	"13" ||
-	"14" ||
-	"15" ||
-	"16" ||
-	"17"
+	localTimeFirstTwoChars === "13" ||
+	localTimeFirstTwoChars === "14" ||
+	localTimeFirstTwoChars === "15" ||
+	localTimeFirstTwoChars === "16" ||
+	localTimeFirstTwoChars === "17"
 ) {
 	document.getElementById(
 		"welcome-message-text"
@@ -103,6 +102,7 @@ if (
 	document.getElementById("welcome-message-text").innerHTML = `Good evening`;
 	document.body.style.backgroundImage =
 		"url('assets/desktop/bg-image-nighttime.jpg')";
+	$("#welcome-message-icon").attr("src", "assets/desktop/icon-moon.svg");
 }
 
 function fetchQuote() {
@@ -119,23 +119,7 @@ function fetchQuote() {
 
 fetchQuote();
 
-// // Slider
-// var toggle = document.getElementById("toggle");
-// var slider = document.querySelector(".slider");
-
-// toggle.addEventListener("click", toggleSlider, false);
-
-// function toggleSlider() {
-// 	if (slider.classList.contains("opened")) {
-// 		slider.classList.remove("opened");
-// 		slider.classList.add("closed");
-// 	} else {
-// 		slider.classList.remove("closed");
-// 		slider.classList.add("opened");
-// 	}
-// }
-
-$("#toggle, .slider").click(function () {
+$("#toggle, #toggle-small-screen, .slider").click(function () {
 	$(".slider").toggleClass("close");
 	$("#container-main").toggleClass("slide-up");
 });

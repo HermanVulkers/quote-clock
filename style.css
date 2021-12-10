@@ -109,7 +109,7 @@ body {
 	width: 50%;
 }
 
-#toggle {
+#toggle, #toggle-small-screen {
 	background-color: white;
 	border: none;
 	border-radius: 30px;
@@ -188,7 +188,12 @@ body {
 	font-weight: 400;
 }
 
+
 @media only screen and (max-width: 768px) {
+	#quote-block {
+		width: 200%;
+	}
+	
 	#clock {
 		font-size: 120px;
 	}
