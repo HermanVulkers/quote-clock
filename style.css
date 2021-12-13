@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-image: url("assets/desktop/bg-image-daytime.jpg");
 	background-position: center center;
@@ -12,7 +16,7 @@ body {
 	background-size: cover;
 	color: white;
 	font-family: "Inter", sans-serif;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 }
 
