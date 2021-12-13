@@ -104,12 +104,12 @@ body {
 #container-main-right {
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	justify-content: flex-end;
 	align-items: flex-end;
 	width: 50%;
 }
 
-#toggle, #toggle-small-screen {
+#toggle {
 	background-color: white;
 	border: none;
 	border-radius: 30px;
